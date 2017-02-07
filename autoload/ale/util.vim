@@ -90,15 +90,14 @@ function! ale#util#LocItemCompare(left, right) abort
         return 1
     endif
 
-    " put errors after warnings (for the same line) since the text that shows
-    " when the cursor is moved will show only the last entry
-    " reverse lexicographic order since 'E' comes before 'W'
+    " put warnings after errors (for the same line) since the text that shows
+    " when the cursor is moved will show only the first entry
 
-    if a:left['type'] > a:right['type']
+    if a:left['type'] < a:right['type']
       return -1
     endif
 
-    if a:left['type'] < a:right['type']
+    if a:left['type'] > a:right['type']
       return 1
     endif
 
