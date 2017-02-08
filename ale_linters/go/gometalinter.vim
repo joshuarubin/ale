@@ -60,11 +60,11 @@ call ale#linter#Define('go', {
 \   'name': 'gometalinter',
 \   'executable': 'gometalinter',
 \   'command_chain': [
-\     {'callback': 'ale_linters#go#gobuild#GoEnv', 'output_stream': 'stdout'},
-\     {'callback': 'ale_linters#go#gobuild#GoList', 'output_stream': 'stdout'},
-\     {'callback': 'ale_linters#go#gobuild#CopyFiles', 'output_stream': 'stdout'},
-\     {'callback': 'ale_linters#go#gobuild#WriteBuffers', 'output_stream': 'stdout'},
-\     {'callback': 'ale_linters#go#gometalinter#GetCommand', 'output_stream': 'stdout'},
+\     {'callback': 'ale_linters#go#gobuild#GoEnv'},
+\     {'callback': 'ale_linters#go#gobuild#CopyFiles'},
+\     {'callback': 'ale_linters#go#gobuild#WriteBuffers'},
+\     {'callback': 'ale_linters#go#gobuild#Install'},
+\     {'callback': 'ale_linters#go#gometalinter#GetCommand'},
 \   ],
 \   'callback': 'ale_linters#go#gometalinter#Handler',
 \})
